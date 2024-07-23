@@ -6,7 +6,7 @@ fetch('components/header.html')
       app.innerHTML = data;
   })
   .catch(error => console.error('Lỗi:', error));
- 
+// fectch sidebar
 fetch('components/sidebar/sidebar.html')
   .then(response => response.text())
   .then(data => {
@@ -15,7 +15,7 @@ fetch('components/sidebar/sidebar.html')
   })
   .catch(error => console.error('Lỗi:', error));
 
-   
+//fetch banner   
 fetch('components/banner.html')
 .then(response => response.text())
 .then(data => {
@@ -24,4 +24,4 @@ fetch('components/banner.html')
 })
 .catch(error => console.error('Lỗi:', error));
 
- 
+

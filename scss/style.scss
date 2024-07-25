@@ -11,12 +11,12 @@ $size-small: 14px;
 $margin-general: 18px 0;
 
 // button
-@mixin button-styles($color, $background, $left ,$top) {
+@mixin button-styles($color, $background, $left ,$top, $radius) {
     color: $color;
     background-color: $background;
     padding: $left $top;
     border: none;
-    border-radius: 10px;
+    border-radius: $radius ;
     cursor: pointer;
   }
 
@@ -33,7 +33,7 @@ body {
 }
 
 #left-side {
-    background-color: #52A7C3;
+    //background-color: #52A7C3;
     padding-left:0.5%;
 }   
 
@@ -51,7 +51,7 @@ body {
     justify-content: center;
     gap:0;
     width: 100%;
-    height: 100vh;
+    //height: 100vh;
     //background-color:lightcyan;
 }
 
@@ -116,7 +116,7 @@ body {
     align-items: center;
     gap:0.7rem;
      .button {
-        @include button-styles($white-color,$primary-color ,0.7rem ,1.5rem );
+        @include button-styles($white-color,$primary-color ,0.7rem ,1.5rem, 10px );
         font-size: 14px;
         display: flex;
         align-items: center;
@@ -131,7 +131,7 @@ body {
     gap: 0.5rem;
     flex:1;
     background-color: $white-color;
-    border: 1px solid #CED4DA;
+    border: 1px solid #CED4DA; 
     border-radius: 40px;
     text-align: left;
     letter-spacing: 0px;
@@ -160,7 +160,7 @@ input::placeholder {
   }
 
 // banner
-#banner-cover {
+.banner-cover {
     margin-top: 2.6rem;
     display:flex;
     justify-content: flex-start;
@@ -171,9 +171,9 @@ input::placeholder {
         justify-content: start;
         align-items: center;
         margin-left:0.15rem;
-        width:20%;
+        //width:20%;
     }
-    #banner-container {
+    .banner-container {
         display:flex;
         justify-content: flex-start;
         align-items: start;
@@ -181,13 +181,13 @@ input::placeholder {
         gap:0.5rem;
         //background-color: blue;
         margin-top: -0.7rem;
-        #title {
+        .title {
             color: $primary-color;
             font-size: 26px;
             font-weight: 700;
             letter-spacing: -2px;
         }
-        #banner-content {
+        .banner-content {
             color: #333333;
             font-size: 15px;
             /* letter-spacing: -1px; */
@@ -231,8 +231,223 @@ input::placeholder {
     }
 }
 
-// .card-width-2 > img {
-//     width:15%;
-//     color: red;
-// }
+// sidebar
+#sidebar {
+    padding-left:0.7rem;
+    #sidebar-container{
+        border: 2px solid #E1E8EF;
+        margin-top: 0.5rem;
+        //padding: 0.5rem;
+        #logo-cover {
+            display: flex;
+            flex-direction: column;
+            gap:0.5rem;
+            justify-content: end;
+            align-items: center;
+            padding: 1.5rem 0.5rem;
+            
+            .sidebar-btn {
+                @include button-styles($white-color,$primary-color ,0.3rem ,1rem,5px );
+                font-weight:600;
+                font-size:18px;
+                color:$white-color;
+                margin-left:1%;
+                //margin-bottom: -1rem;;
+            }
+        }
+    }
+    
+}
+
+#menu-cover {
+    display:flex;
+    flex-direction: column;
+    //gap: 1rem;
+    justify-content: start;
+    align-items: start;
+    .menu-content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        //justify-content: center;
+        border-top: 1px solid #E1E8EF;
+        //background: #7B7B7B;
+        padding: 1.1rem;
+        div {
+            font-size: 16px;
+            font-weight: 400;
+            color: $main-letter;
+        }
+    }
+}
+
+//banner product
+#banner-product {
+    margin-top:4rem;
+}
+#banner-2 {
+    margin-top: 0.2rem;
+    line-height: 175%;
+    .title {
+        font-weight:600;
+        font-size:26px;
+        letter-spacing: -2.8px;
+    }
+}
+
+.line {
+    width:100%;
+    height:1px;
+    background: $primary-color;
+    //margin: 1.5rem 0;
+    position: relative;
+    .subline {
+        width:23%;
+        height:4px;
+        background-color: $primary-color;
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+}
+
+// product
+.parrent-product {
+    margin-top:1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-gap: 0.8rem;
+    justify-content: start;
+    align-items: start;
+    .product-cover{
+        padding: 1rem ;
+        padding-top: 2rem;;
+        border-radius: 5px;
+        background-color: $primary-light-color;
+        height: auto;
+        min-height: 145px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            color: $primary-color;
+            font-size: 14px;
+            font-weight:500;
+            text-align: center;
+        }
+        img{
+            width:60%;
+        }
+    }
+}
+
+.line-title {
+    color: $primary-color;
+    font-size: 18px;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+//banner footer
+#banner-footer-cover {
+    margin-top: 5rem;
+    .banner-container{
+        margin-left: -0.1%;
+        .title {
+            margin-top: 1.2rem;
+            margin-bottom: 0.3rem;
+            font-size:25px;
+        }
+        .banner-content {
+           margin-left:-0.2%;
+        }
+    }
+}
+
+//footer
+
+#footer {
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    color:$primary-color;
+    margin-left: 0%;
+    .footer-container {
+        .footer-line {
+            width:100%;
+            height:1px;
+            background: $primary-color;
+            //margin: 1.5rem 0;
+            position: relative;
+            .footer-subline {
+                width:23%;
+                height:3px;
+                background-color: $primary-color;
+                position: absolute;
+                top:0;
+                left: 0;
+        }
+    }
+        margin-top: 2.1rem;
+        //margin-bottom: 0.5rem;
+        .footer-item-container{
+            margin-top:1.2rem;
+            margin-bottom: -1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            gap:1rem;
+            .item-title {
+                font-weight:600;
+                font-size:18px;
+            }
+            .item-content{
+                margin-top: -0.33rem;
+                font-size: 14px;
+                line-height: 2.5;
+                font-weight:500;
+                div{
+                    margin-top:-0.1rem;
+                   letter-spacing: 0.025rem;
+                    //color:red
+                }
+            }
+        }
+    }
+}
+
+#footer-container-4, #footer-container-5 {
+    margin-top: 1.65rem !important; 
+}
+
+#footer-item-container-2, #footer-item-container-3  {
+    
+}
+
+//coppy right
+#coppy-right {
+
+}
+
+ footer {
+    background-color: $main-letter;
+    color: white;
+    font-size: 10px;
+    text-align: right;
+    padding: 1.5rem;
+    margin-top: 8.5rem;
+   div{
+    margin-right: 14.3%;
+    word-spacing: 0.2rem;
+   }
+
+ }
+
 
